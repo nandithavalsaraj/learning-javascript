@@ -1,3 +1,8 @@
+
+<!--
+This ia a simple program to demonstrate how functions work. In this code the user inputs the first and last name separately and output is the full name.
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,9 +10,11 @@
             function displayFullName()
             {
                 var firstName=document.getElementById("firstName").value;
-                if(firstName=="NaN"){alert("First Name not added!!!");return;} //a person cannot be without a valid name
+                //a person cannot be without a first name
+                if(firstName=="NaN"){alert("First Name not added!!!");return;} 
                 var fullName=firstName+" "+secondName;
-                var secondName=document.getElementById("secondName").value; //a person can be without second name
+                //a person can be without second name 
+                var secondName=document.getElementById("secondName").value; 
                 var fullName=firstName+" "+secondName;
                 console.log("Full Name is "+fullName);
                 alert("Full Name is "+fullName);
