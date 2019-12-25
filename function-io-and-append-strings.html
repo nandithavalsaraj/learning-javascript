@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function displayFunction()
+            {
+                var fnm=document.getElementById("fname").value;
+                if(fnm=="NaN"){alert("First Name needed!!!");return;}
+                var snm=document.getElementById("sname").value;
+                var tname=fnm+" "+snm;
+                //document.getElementById("fullname").value=tname;
+                console.log("Full Name is "+tname);
+                alert("Full Name is "+tname);
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <table>
+                <tr>
+                    <td>First Name:</td><td><input type="text" id="fname" ></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td><td><input type="text" id="sname" ></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="submit" onclick="displayFunction()"></td></tr>
+            </table>
+        </form>
+    </body>
+</html>
