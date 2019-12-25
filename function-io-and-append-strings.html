@@ -2,15 +2,15 @@
 <html>
     <head>
         <script>
-            function displayFunction()
+            function displayFullName()
             {
-                var fnm=document.getElementById("fname").value;
-                if(fnm=="NaN"){alert("First Name needed!!!");return;}
-                var snm=document.getElementById("sname").value;
-                var tname=fnm+" "+snm;
-                //document.getElementById("fullname").value=tname;
-                console.log("Full Name is "+tname);
-                alert("Full Name is "+tname);
+                var firstname=document.getElementById("firstName").value;
+                if(firstName=="NaN"){alert("First Name not added!!!");return;} //a person cannot be without a valid name
+                var fullName=firstName+" "+secondName;
+                var secondName=document.getElementById("secondName").value; //a person can be without second name
+                var fullName=firstName+" "+secondName;
+                console.log("Full Name is "+fullName);
+                alert("Full Name is "+fullName);
             }
         </script>
     </head>
@@ -18,13 +18,13 @@
         <form>
             <table>
                 <tr>
-                    <td>First Name:</td><td><input type="text" id="fname" ></td>
+                    <td>First Name:</td><td><input type="text" id="firstName" ></td>
                 </tr>
                 <tr>
-                    <td>Last Name:</td><td><input type="text" id="sname" ></td>
+                    <td>Last Name:</td><td><input type="text" id="secondName" ></td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="submit" onclick="displayFunction()"></td></tr>
+                    <td><input type="button" value="submit" onclick="displayFullName()"></td></tr>
             </table>
         </form>
     </body>
