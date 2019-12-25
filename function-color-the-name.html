@@ -1,0 +1,44 @@
+
+<!--
+This is a simple program to demonstrate how to work with functions and manipulate element style. In this code, the user inputs a name and a color separately and the output is the name written in the inputted color. 
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function updateColorFunction()
+            {
+                var userName = document.getElementById("name").value;
+                // Name need to be a valid value.
+                if(userName == "NaN"){
+                    alert("Name needed!!!");
+                    return;
+                }
+                var favColor = document.getElementById("color").value;
+                // Favourite color has to be a valid value.
+                if(favColor == "NaN"){
+                    alert("Fav color needed!!!");
+                    return;
+                }
+                document.getElementById("result").style.color = favColor;
+                document.getElementById("result").value = userName;
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <table>
+                <tr>
+                    <td>Enter Name:</td><td><input type="text" id="name" ></td>
+                </tr>
+                <tr>
+                    <td>Enter Fav Color:</td><td><input type="text" id="color" ></td>
+                </tr><tr>
+                    <td>Result:</td><td><input type="text" id="result" ></td>
+                </tr><tr>
+                    <td><input type="button" value="submit" onclick="updateColorFunction()"></td></tr>
+                
+            </table>
+        </form>
+    </body>
+</html>
