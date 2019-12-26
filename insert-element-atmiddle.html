@@ -1,0 +1,22 @@
+<!--
+A simple program to insert an element at the middle of the  an input array. Learn how the inbuilt function splice works.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var size = Number(prompt("Enter the array size"));;
+            var arr = new Array(size);
+            for(var i = 0 ; i < size ; i++)
+            {
+                arr[i] = Number(prompt("Enter the array value"));
+            }
+            var value = Number(prompt("Enter the value to be inserted"));
+            //Insert element into middle without deleting any arraydata
+            arr.splice((size/2),0,value);
+            document.write("Result :" + arr);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
