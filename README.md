@@ -1,37 +1,46 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/nvjvn/learning-javascript/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[amount-to-coins.html](https://nvjvn.github.io/learning-javascript/amount-to-coins.html) - A program to convert total amount to set of coins.
 
-### Markdown
+[array-find-min-max.html](https://nvjvn.github.io/learning-javascript/)	- A simple program to find minimum and maximum from an input array.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[calculate-age.html](https://nvjvn.github.io/learning-javascript/)- Working with onkeyUp and onblur.
 
-```markdown
-Syntax highlighted code block
+[calculate-grades.html](https://nvjvn.github.io/learning-javascript/calculate-grades.html)- A simple program to calculate the grade given the marks as input.
 
-# Header 1
-## Header 2
-### Header 3
+[camelcaseData.html](https://nvjvn.github.io/learning-javascript/camelcaseData.html)-A program to convert the input to  camelCase.
 
-- Bulleted
-- List
+[checkPangram.html](https://nvjvn.github.io/learning-javascript/checkPangram.html)- A program to check for pangram.
 
-1. Numbered
-2. List
+[eligibility-to-vote.html](https://nvjvn.github.io/learning-javascript/eligibility-to-vote.html)-  A program to check the eligibility to vote.
 
-**Bold** and _Italic_ and `Code` text
+[find-duplicate-elements.html](https://nvjvn.github.io/learning-javascript/find-duplicate-elements.html)- A program to find duplicates in the input array.
 
-[Link](url) and ![Image](src)
-```
+[find-factors.html](https://nvjvn.github.io/learning-javascript/find-factors.html)- A program to find factors of a given number.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[find-longest-word.html](https://nvjvn.github.io/learning-javascript/find-longest-word.html)-A program to find the longest word in the sentence.
 
-### Jekyll Themes
+[find-time-date-and-day.html](https://nvjvn.github.io/learning-javascript/find-time-date-and-day.html)-A program to find the time, day and date when executed. 
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nvjvn/learning-javascript/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+[function-color-the-name.html](https://nvjvn.github.io/learning-javascript/function-color-the-name.html)- Working with fonts.
 
-### Support or Contact
+[function-io-and-append-strings.html](https://nvjvn.github.io/learning-javascript/function-io-and-append-strings.html)- Read, process, and display username using functions.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[get-name-initials.html](https://nvjvn.github.io/learning-javascript/get-name-initials.html)- A simple program to get the initials of the input name. Main aim is to familiarize with the inbuilt substring function.
+
+[guess-number.html](https://nvjvn.github.io/learning-javascript/guess-number.html)- A simple guess the number game. 
+
+[image-clock.html](https://nvjvn.github.io/learning-javascript/image-clock.html) - Working with onkeyUp and onblur.
+
+[insert-element-atmiddle.html](https://nvjvn.github.io/learning-javascript/insert-element-atmiddle.html)- Working with  Array functions.
+
+[insert-element-atposition.html](https://nvjvn.github.io/learning-javascript/insert-element-atposition.html)- Array functions.
+
+[key-event.html](https://nvjvn.github.io/learning-javascript/key-event.html)- Working with onkeyUp and onblur.
+
+[matrix-of-numbers.html](https://nvjvn.github.io/learning-javascript/matrix-of-numbers.html)-	A simple program to print a matrix of numbers given row and column size as input.
+
+[user-form.html](https://nvjvn.github.io/learning-javascript/user-form.html)- Program to create form for user input.
+
+[vowels-count.htm](https://nvjvn.github.io/learning-javascript/vowels-count.html)	A program to find factors of a given number.
+

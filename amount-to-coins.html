@@ -5,7 +5,8 @@
 <html>
     <head>
         <script>
-        function amountTocoins(tot,renum){
+        function amountTocoins(renum){
+                var tot = Number(prompt("Enter the amount"));
                 document.write(" Coins :" + renum + "<br>");
                 document.write(" Total Amount :" + tot + "<br>");
                 var count = new Array(renum.length);
@@ -26,7 +27,7 @@
                     }
                 }
         }
-         amountTocoins(47, [25, 10, 5, 2, 1])
+         amountTocoins([25, 10, 5, 2, 1])
        </script>
     </head>
     <body>
