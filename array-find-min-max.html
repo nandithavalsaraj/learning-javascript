@@ -6,25 +6,25 @@ A simple program to find minimum and maximum from an input array.
     <head>
         <script>
             var size =Number(prompt("Enter the array size"));;
-            var arr=new Array(size);
-            var max;
-            var min;
-            for(var i=0;i<size;i++)
+            var arr = new Array(size);
+            var maxValue;
+            var minValue;
+            for(var i = 0 ; i < size ; i++)
             {
-                arr[i]=Number(prompt("Enter the array value"));
-                if(i==0){
-                    min=arr[i];
-                    max=arr[i];
+                arr[i] = Number(prompt("Enter the array value"));
+                if(i == 0){
+                    minValue = arr[i];
+                    maxValue = arr[i];
                 }
-                if(arr[i]>max){
-                    max=arr[i];
+                if(arr[i] > maxValue){
+                    maxValue = arr[i];
                 }
-                if(arr[i]<min){
-                    min=arr[i];
+                if(arr[i] < minValue){
+                    minValue = arr[i];
                 }
                 
             }
-        document.write("Max Value :"+max+"<br>"+"Min Value :"+min)
+        document.write("Max Value :" + maxValue + "<br>" + "Min Value :" + minValue)
         </script>
     </head>
     <body>
