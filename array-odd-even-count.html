@@ -1,0 +1,40 @@
+<!--
+A simple program to find count of odd and even numbers from an input array.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var size=Number(prompt("Enter the array size"));;
+            var arr=new Array(size);
+            var max;
+            var min;
+            var eCount=0;
+            var oCount=0;
+            for(var i=0;i<size;i++)
+            {
+                arr[i]=Number(prompt("Enter the array value"));
+                if(i==0){
+                    min=arr[i];
+                    max=arr[i];
+                }
+                if(arr[i]>max){
+                    max=arr[i];
+                }
+                if(arr[i]<min){
+                    min=arr[i];
+                }
+                if(arr[i] % 2 == 0){
+                    eCount=eCount+1;
+                }
+                else{
+                    oCount=oCount+1;
+                }
+                
+            }
+        document.write("Odd Count :"+oCount+"<br>"+"Even Count :"+eCount);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
