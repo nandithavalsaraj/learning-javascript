@@ -1,0 +1,28 @@
+<!--
+A  simple program to total vowels in the sentence.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function vowelsCount(str){
+                var count = 0;
+                //making the functions case insensitve
+                str = str.toLowerCase();
+                var vowelSet = "aeiou";
+                for(var i = 0 ; i < vowelSet.length ; i++){
+                    if(str.indexOf(vowelSet[i]) !== -1){
+                        count++;
+                    }
+                }
+                return count;
+            }
+                var result = vowelsCount("Awareness is the key of success");
+                document.write("Vowel count is :" + result);
+                
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
