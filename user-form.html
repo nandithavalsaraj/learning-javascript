@@ -7,12 +7,12 @@ A simple program to get the enter user data. Ouput is Mr/Miss/Mrs based on gende
         <script>
             function display()
             {
-                var name=document.getElementById("userName").value;
+                var name = document.getElementById("userName").value;
                 var radioGender = genderForm.elements["userGender"];
                 var checkStatus = statusForm.elements["userStatus"];
                 /*. obtain gender data from radio boxes   */
-                var prefix=(radioGender[0].checked)?("Mr"):(checkStatus.checked?"Mrs":"Miss");
-                alert(prefix+" "+name);
+                var prefix = (radioGender[0].checked)?("Mr"):(checkStatus.checked?"Mrs":"Miss");
+                alert(prefix + " " + name);
             }
         </script>
     </head>
