@@ -1,5 +1,5 @@
 <!--
-A simple program to get the capilalize the first letter of the input data. Main aim is to familiarize with the inbuilt string functions.
+A simple program to get the enter user data. Ouput is Mr/Miss/Mrs based on gender data provided.
 -->
 <!DOCTYPE html>
 <html>
@@ -8,11 +8,11 @@ A simple program to get the capilalize the first letter of the input data. Main 
             function display()
             {
                 var name=document.getElementById("userName").value;
-                var prefix="Mr";
-                var radio1 = genderForm.elements["userGender"];
-                var check1 = statusForm.elements["userStatus"];
-                var gender=(radio1[0].checked)?("Mr"):(check1.checked?"Mrs":"Miss");
-                alert(gender+" "+name);
+                var radioGender = genderForm.elements["userGender"];
+                var checkStatus = statusForm.elements["userStatus"];
+                /*. obtain gender data from radio boxes   */
+                var prefix=(radioGender[0].checked)?("Mr"):(checkStatus.checked?"Mrs":"Miss");
+                alert(prefix+" "+name);
             }
         </script>
     </head>
