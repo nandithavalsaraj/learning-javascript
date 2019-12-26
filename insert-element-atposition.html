@@ -1,20 +1,21 @@
 <!--
-A simple program to insert an element at a given position in an input array.
+A simple program to insert an element at a given position in an input array. Learn how the inbuilt function splice works.
 -->
 <!DOCTYPE html>
 <html>
     <head>
         <script>
-            var size=Number(prompt("Enter the array size"));
-            var value=Number(prompt("Enter the value to be inserted"));
-            var pos=Number(prompt("Enter position to insert:"));
-            var arr=new Array(size);
-            for(var i=0;i<size;i++)
+            var size = Number(prompt("Enter the array size"));
+            var value = Number(prompt("Enter the value to be inserted"));
+            var pos = Number(prompt("Enter position to insert:"));
+            var arr = new Array(size);
+            for(var i = 0 ; i < size ; i++)
             {
-                arr[i]=Number(prompt("Enter the array value"));
+                arr[i] = Number(prompt("Enter the array value"));
             }
+            //Insert element into position without deleting any arraydata
             arr.splice(pos,0,value);
-            document.write("Result :"+arr);
+            document.write("Result :" + arr);
         </script>
     </head>
     <body>
