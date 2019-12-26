@@ -1,0 +1,34 @@
+<!--
+A simple ptogram to get the initials of the input name. Main aim is to familiarize with the inbuilt substring function.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function getShortName()
+            {
+                var fname=document.getElementById("firstName").value;
+                var lname=document.getElementById("lastName").value;
+                var res1=fname.substring(0,1);
+                var res2=lname.substring(0,1);
+                alert(res1+" "+res2);
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <td><input type="text" id="firstName" ></td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td><input type="text" id="lastName" ></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Get Short Name" onclick="getShortName()"></td>
+            </tr>
+                            
+      </table>
+    </body>
+</html>
