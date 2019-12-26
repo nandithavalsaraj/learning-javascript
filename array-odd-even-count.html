@@ -5,34 +5,23 @@ A simple program to find count of odd and even numbers from an input array.
 <html>
     <head>
         <script>
-            var size=Number(prompt("Enter the array size"));;
-            var arr=new Array(size);
-            var max;
-            var min;
-            var eCount=0;
-            var oCount=0;
-            for(var i=0;i<size;i++)
+            var size = Number(prompt("Enter the array size"));;
+            var arr = new Array(size);
+            var evenCount = 0;
+            var oddCount = 0;
+            for(var i = 0 ; i < size ; i++)
             {
-                arr[i]=Number(prompt("Enter the array value"));
-                if(i==0){
-                    min=arr[i];
-                    max=arr[i];
-                }
-                if(arr[i]>max){
-                    max=arr[i];
-                }
-                if(arr[i]<min){
-                    min=arr[i];
-                }
+                arr[i] = Number(prompt("Enter the array value"));
+                /* check if the ith element of the array is even or odd */
                 if(arr[i] % 2 == 0){
-                    eCount=eCount+1;
+                    evenCount = evenCount + 1;
                 }
                 else{
-                    oCount=oCount+1;
+                    oddCount = oddCount + 1;
                 }
                 
             }
-        document.write("Odd Count :"+oCount+"<br>"+"Even Count :"+eCount);
+        document.write("Odd Count :" + oCount + "<br>" + "Even Count :" + eCount);
         </script>
     </head>
     <body>
