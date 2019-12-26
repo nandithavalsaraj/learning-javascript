@@ -6,16 +6,15 @@ A simple program to print a matrix of numbers given row and column size as input
     <head>
         <script>
             
-                var mr=Number(prompt("Enter rows :"));
-                var mc=Number(prompt("Enter columns:"));
-                for(var i=1;i<=mr;i++){
-                    for(var j=1;j<=mc;j++){
-                        document.write((j*i)+" ");
+                var rowCount = Number(prompt("Enter rows :"));
+                var columnCount = Number(prompt("Enter columns:"));
+                /* for loop to traverse throught the matrix */
+                for(var i = 1 ; i <= rowCount ; i++){
+                    for(var j = 1 ; j <= columnCount ; j++){
+                        document.write(( j * i ) + " ");
                     }
                     document.write("<br>");
                 }
-                
-            
         </script>
     </head>
     <body>
