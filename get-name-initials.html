@@ -7,11 +7,12 @@ A simple ptogram to get the initials of the input name. Main aim is to familiari
         <script>
             function getNameInitials()
             {
-                var firstName=document.getElementById("firstName").value;
-                var lastName=document.getElementById("lastName").value;
-                var firstInitial=firstName.substring(0,1);
-                var lastInitial=lastName.substring(0,1);
-                alert(firstInitial+" "+lastInitial);
+                var firstName = document.getElementById("firstName").value;
+                var lastName = document.getElementById("lastName").value;
+                /*Using substring functions to obtain fitst letter of the name*/
+                var firstInitial = firstName.substring(0,1);
+                var lastInitial = lastName.substring(0,1);
+                alert(firstInitial + " " + lastInitial);
             }
         </script>
     </head>
