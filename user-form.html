@@ -1,0 +1,44 @@
+<!--
+A simple program to get the capilalize the first letter of the input data. Main aim is to familiarize with the inbuilt string functions.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function display()
+            {
+                var name=document.getElementById("userName").value;
+                var prefix="Mr";
+                var radio1 = genderForm.elements["userGender"];
+                var check1 = statusForm.elements["userStatus"];
+                var gender=(radio1[0].checked)?("Mr"):(check1.checked?"Mrs":"Miss");
+                alert(gender+" "+name);
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Enter Name</th>
+                <td><input type="text" id="userName" ></td>
+            </tr>
+            <tr>
+                <th>Enter Gender</th>
+                <form name="genderForm">
+                <td><input type="radio" name="userGender" value="male" > Male<br>
+                    <input type="radio" name="userGender" value="female"> Female<br></td>
+                    </form>
+            </tr>
+            <tr>
+                <th>Enter Married</th>
+                <form name="statusForm">
+                    <td><input type="checkbox" name="userStatus" ><br>
+                </form>
+            </tr>
+            <tr>
+                <td><input type="button" value="Submit" onclick="display()"></td>
+            </tr>
+                            
+      </table>
+    </body>
+</html>
