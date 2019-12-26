@@ -5,13 +5,13 @@ A simple ptogram to get the initials of the input name. Main aim is to familiari
 <html>
     <head>
         <script>
-            function getShortName()
+            function getNameInitials()
             {
-                var fname=document.getElementById("firstName").value;
-                var lname=document.getElementById("lastName").value;
-                var res1=fname.substring(0,1);
-                var res2=lname.substring(0,1);
-                alert(res1+" "+res2);
+                var firstName=document.getElementById("firstName").value;
+                var lastName=document.getElementById("lastName").value;
+                var firstInitial=firstName.substring(0,1);
+                var lastInitial=lastName.substring(0,1);
+                alert(firstInitial+" "+lastInitial);
             }
         </script>
     </head>
@@ -26,7 +26,7 @@ A simple ptogram to get the initials of the input name. Main aim is to familiari
                 <td><input type="text" id="lastName" ></td>
             </tr>
             <tr>
-                <td><input type="button" value="Get Short Name" onclick="getShortName()"></td>
+                <td><input type="button" value="Get Short Name" onclick="getNameInitials()"></td>
             </tr>
                             
       </table>
