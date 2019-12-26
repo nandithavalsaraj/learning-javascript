@@ -1,3 +1,6 @@
+<!--
+    A  simple program to convert an amount to set of small denominations.
+    -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,25 +8,25 @@
         function amountTocoins(tot,renum){
                 document.write(" Coins :" + renum + "<br>");
                 document.write(" Total Amount :" + tot + "<br>");
-                var count=new Array(renum.length);
-                for(var i=0;i<renum.length;i++){
-                    count[i]=0;
+                var count = new Array(renum.length);
+                for(var i = 0 ; i < renum.length ; i++){
+                    count[i] = 0;
                 }
-                var pos=0
-                var bal=tot;
+                var pos = 0;
+                var bal = tot;
                 var temp
-                while( bal>0){
-                    temp=parseInt(bal/renum[pos]);
-                    if( temp>0){
+                while( bal > 0){
+                    temp = parseInt( bal/renum[pos] );
+                    if( temp > 0){
                         bal = bal - renum[pos] ;
-                        document.write(renum[pos]+"&nbsp");
+                        document.write(renum[pos] + "&nbsp");
                     }
                     else{
-                        pos=pos+1;
+                        pos = pos + 1;
                     }
                 }
         }
-         amountTocoins(46, [25, 10, 5, 2, 1])
+         amountTocoins(47, [25, 10, 5, 2, 1])
        </script>
     </head>
     <body>
