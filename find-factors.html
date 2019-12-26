@@ -7,15 +7,15 @@
         <script>
             var number = Number(prompt("Enter the Number"))
             var factorSet = "";
-            for(var i=1;i<=number;i++){
-                if(n%i == 0){
-                    if(factorSet!=""){
-                        factorSet=factorSet+",";
+            for(var i = 1 ; i <= number ; i++){
+                if(number % i == 0){
+                    if(factorSet != ""){
+                        factorSet = factorSet + "," ;
                     }
                     factorSet = factorSet + i;
                 }
             }
-            document.write("Factors of "+ n +" is "+ factorSet);
+            document.write("Factors of "+ number +" is "+ factorSet);
         </script>
     </head>
     <body>
