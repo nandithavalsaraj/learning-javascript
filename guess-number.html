@@ -1,0 +1,36 @@
+<!--
+A simple guess the number game.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var attempt=0;
+            var val=25;
+            do{
+                attempt+=1;
+                var num=Number(prompt("Enter number :"));
+                if(num==val){
+                    alert("Congrats you guessed the right number");
+                    break;
+                }
+                else if(num>val){
+                    alert("Too high.");
+                }
+                else{
+                    alert("Too Low.");}
+                
+                if(attempt==5){
+                    alert("Attempt limit reached");
+                }
+                else{
+                    alert("Guess Again");
+                }
+            }while(attempt<=5);
+                
+            
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
