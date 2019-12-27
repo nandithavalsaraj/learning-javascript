@@ -1,3 +1,30 @@
 <!--
-    A  simple program to find if a user is eligible to vote given age as input.
+    A  simple program to find if a user is eligible to vote given age as input. Demonstrate error handling in JavaScript.
     -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function  eligibleForVote(age){
+            	/* try block */
+                try{
+                    if (age < 18){
+                        throw{
+                            error: "Invalid Age",
+                            message: "Not allowed to Vote"
+                        };
+                    }
+                    }
+                    catch(e){
+                    document.write("<br>Error :" + e.error);
+                    document.write("<br>Message :" + e.message);
+                }
+            }
+        eligibleForVote(17);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
