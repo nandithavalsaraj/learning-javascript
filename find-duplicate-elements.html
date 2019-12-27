@@ -1,0 +1,33 @@
+<!--
+    A  simple program to find duplicates in the input array.
+    -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var size=Number(prompt("Enter the array size"));;
+            var arr=new Array(size);
+            for(var i=0;i<size;i++)
+            {
+                arr[i]=prompt("Enter the array value");
+            }
+            document.write("Original Array is :<br>");
+            document.write(arr+"<br><br>");
+            //filter to find the duplicates
+            var res = arr.filter(function (value,index,array) {
+                return ( arr.indexOf(value)!= index);
+                                 })
+            //filter to handle multiple occurences of duplicates
+            var res2 = res.filter(function (value,index,array) {
+                                 return ( res.indexOf(value)== index);
+                                 })
+            document.write("Duplicated Elements are:<br>");
+            for(var i=0;i<res2.length;i++)
+            {
+                document.write(res2[i]+"<br>");
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
