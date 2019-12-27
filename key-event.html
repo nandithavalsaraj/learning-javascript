@@ -1,0 +1,31 @@
+<!--
+    Program to demonstrate event functions
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function displayFunction(id)
+            {
+                document.getElementById(id).style.color = "white";
+                 if( document.getElementById(id).value == ""){
+                     document.getElementById(id).style.backgroundColor = "red";}
+                 else{
+                     document.getElementById(id).style.backgroundColor = "green";   
+                     }
+            }
+        
+        </script>
+    </head>
+    <body>
+        <form>
+            <table>
+                <tr>
+                    <td>First Name:</td><td><input type="text" id="fname" onkeyUp=displayFunction("fname") onblur= displayFunction("fname") ></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td><td><input type="text" id="sname" onkeyUp=displayFunction("sname") onblur= displayFunction("sname")></td>
+                </tr></table>
+        </form>
+    </body>
+</html>
