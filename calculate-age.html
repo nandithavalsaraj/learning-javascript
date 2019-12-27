@@ -1,3 +1,33 @@
 <!--
     A  simple program to calculate age given the date of birth.
     -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function calculateAge(dob) {
+                var today = new Date();
+                var age = today.getFullYear() - dob.getFullYear();
+                var monthDiff = today.getMonth() - dob.getMonth();
+                var ageDiff = today.getDate() - dob.getDate();
+                //considering the month factor
+                if(monthDiff < 0){
+                    age = age - 1;
+                }
+                //considering the month factor provided the month is the same
+                if(monthDiff == 0){
+                    if(ageDiff < 0){
+                        age = age - 1;
+                    }
+                }
+                document.write("Age is " + age);
+            }
+        //Converting the input parameter of the function in date format during the function call itself
+        calculateAge(new Date(1999, 3, 2));
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
