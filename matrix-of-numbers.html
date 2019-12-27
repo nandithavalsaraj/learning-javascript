@@ -1,0 +1,22 @@
+<!--
+A simple program to print a matrix of numbers given row and column size as input.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            
+                var rowCount = Number(prompt("Enter rows :"));
+                var columnCount = Number(prompt("Enter columns:"));
+                /* for loop to traverse throught the matrix */
+                for(var i = 1 ; i <= rowCount ; i++){
+                    for(var j = 1 ; j <= columnCount ; j++){
+                        document.write(( j * i ) + " ");
+                    }
+                    document.write("<br>");
+                }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
