@@ -1,0 +1,69 @@
+<!--
+A simple program to calculate the grade given the marks as input.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                background-color: lightgrey;
+                border: 15px solid blue;
+                padding: 25px;
+                position: absolute;
+                top: 40%;
+                left: 40%;
+                margin-top: -50px;
+                margin-left: -50px;
+                width: 200px;
+                height: 100px;
+            }
+       
+        </style>
+        <script>
+            function findGrade(){
+                var marks = document.getElementById("Marks").value;
+                var grade;
+                if(marks > 90){
+                    grade = "AA";
+                }
+                else if(marks > 80){
+                    grade = "AB";
+                }
+                else if(marks > 70){
+                    grade = "BB";
+                }
+                else if(marks > 60){
+                    grade = "BC";
+                }
+                else if(marks > 50){
+                    grade = "CC";
+                }
+                else if(marks > 40){
+                    grade = "CD";
+                }
+                else if(marks > 30){
+                    grade = "DD";
+                }
+                else
+                {
+                    grade = "FF";
+                }
+                alert(grade);
+                document.getElementById("Marks").value = "";
+            }
+        </script>
+    </head>
+    <body>
+        
+        <div>
+            <table>
+                <tr>
+                    <th>Enter Marks</th>
+                    <td><input type="text" id="Marks"></td>
+                </tr><tr>
+                    <td><input type="button" value="submit" onclick="findGrade()"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
