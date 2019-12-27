@@ -1,0 +1,36 @@
+<!--
+    A  simple program to find the time, day and date when executed.
+    -->
+
+ <!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var monthValueSet = ["Jan","Feb","March","April","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+            var dayValueSet = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            var dateValue = new Date();
+            var yearValue = dateValue.getFullYear();
+            var monthValue = dateValue.getMonth();
+            var today = dateValue.getDate();
+            var dayValue = dateValue.getDay();
+            var timeValue = dateValue.getTime();
+            var hourValue = dateValue.getHours();
+            var minutesValue = dateValue.getMinutes();
+            var periodValue = "AM";
+            /*
+            Finding period value by checking 12 hr cap
+            */
+            if(hourValue > 12){
+                hourValue = hourValue - 12;
+                periodValue = "PM";
+            }
+            if(hourValue < 10){
+                hourValue = "0" + hourValue;
+             }
+            document.write( monthValueSet[monthValue] + "-" + today + "-" + yearValue + "&nbsp" + dayValueSet[dayValue] + ",&nbsp" + hourValue + ":" + minutesValue + "&nbsp" + periodValue );
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
