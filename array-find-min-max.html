@@ -1,0 +1,33 @@
+<!--
+A simple program to find minimum and maximum from an input array.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var size =Number(prompt("Enter the array size"));;
+            var arr = new Array(size);
+            var maxValue;
+            var minValue;
+            for(var i = 0 ; i < size ; i++)
+            {
+                arr[i] = Number(prompt("Enter the array value"));
+                if(i == 0){
+                    minValue = arr[i];
+                    maxValue = arr[i];
+                }
+                if(arr[i] > maxValue){
+                    maxValue = arr[i];
+                }
+                if(arr[i] < minValue){
+                    minValue = arr[i];
+                }
+                
+            }
+        document.write("Max Value :" + maxValue + "<br>" + "Min Value :" + minValue)
+        </script>
+    </head>
+    <body>
+       <p id="res"></p>
+    </body>
+</html>

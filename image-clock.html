@@ -1,0 +1,37 @@
+<!--
+	Program to start changing image at an specific time interval once clock is started. The image change has to be stopped with the clock
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+      
+            <img src = "1.jpeg" id = "image" width = "100" height = "100">
+            <input type = "Button" value = "Start" onclick = "startClock()">
+                &emsp;
+                <input type = "Button" value = "Stop" onclick = "stopClock()">
+     </body>
+     <script>
+            var intervalId;
+            function startClock(){
+                intervalId = setInterval(imageCall,1000);
+            }
+            function stopClock(){
+                clearInterval(intervalId);
+            }
+            function imageCall(){
+                var data = document.getElementById("image").getAttribute("src");
+                var imageId = Number(data.split(".")[0]) + 1;
+                if(imageId > 5){
+                    imageId = imageId - 5;
+                }
+                var newImage = imageId + ".jpeg";
+                document.getElementById("image").setAttribute("src",newImage);
+                
+            }
+     </script>
+   
+</html>
