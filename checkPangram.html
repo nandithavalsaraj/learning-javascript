@@ -1,0 +1,23 @@
+<!--
+WAP to check if an input string is pangram.
+pangram word def: a sentence which contain all letters of the  alphabet.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+ 		function isPangram(sentence){
+ 			for (let c of 'abcdefghijklmnopqrstuvwxyz'){
+ 				if(sentence.indexOf(c) == -1){
+ 					return false;}
+ 			}
+ 			return true;
+			}
+
+		console.log(isPangram("the quick brown fox jumps over the lazy dog"));
+		console.log(isPangram("the quick brown fox jumps over a dog"));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
