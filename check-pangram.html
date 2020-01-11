@@ -8,10 +8,10 @@ pangram word def: a sentence which contain all letters of the  alphabet.
         <script>
  		function isPangram(sentence){
  			//to ignore the case ambiguity we convert 
- 			let newsentence = sentence.toLowerCase();
+ 			let newSentence = sentence.toLowerCase();
 
- 			for (let c of 'abcdefghijklmnopqrstuvwxyz'){
- 				if(newsentence.indexOf(c) == -1){
+ 			for (let char of 'abcdefghijklmnopqrstuvwxyz'){
+ 				if(newSentence.indexOf(char) == -1){
  					return false;}
  			}
  			return true;

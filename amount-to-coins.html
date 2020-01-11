@@ -6,20 +6,20 @@
     <head>
         <script>
         function amountTocoins(renum){
-                var tot = Number(prompt("Enter the amount"));
+                var totalAmount = Number(prompt("Enter the amount to be converted to notes/coins"));
                 document.write(" Coins :" + renum + "<br>");
-                document.write(" Total Amount :" + tot + "<br>");
+                document.write(" Total Amount :" + totalAmount + "<br>");
                 var count = new Array(renum.length);
                 for(var i = 0 ; i < renum.length ; i++){
                     count[i] = 0;
                 }
                 var pos = 0;
-                var bal = tot;
-                var temp
-                while( bal > 0){
-                    temp = parseInt( bal/renum[pos] );
+                var balance = totalAmount;
+                var temp;
+                while( balance > 0){
+                    temp = parseInt( balance/renum[pos] );
                     if( temp > 0){
-                        bal = bal - renum[pos] ;
+                        balance = balance - renum[pos] ;
                         document.write(renum[pos] + "&nbsp");
                     }
                     else{
