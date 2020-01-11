@@ -1,0 +1,23 @@
+<!--
+	Working with the mouse over event.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <table>
+                <tr>
+                    <td><input type="button" value="Click me :)" id="button1" onmouseout="this.style.color='yellow'" onmouseover="this.style.color='red'" onclick="displayFunction(id)"></td>
+                </tr>
+            </table>
+    </body>
+    <script>
+        	function displayFunction(id)
+            {
+                
+                document.getElementById(id).style.color="blue"
+            }
+            
+        </script>
+</html>
