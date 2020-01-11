@@ -9,9 +9,9 @@ A simple program to insert an element at a given position in an input array. Lea
             var value = Number(prompt("Enter the value to be inserted"));
             var pos = Number(prompt("Enter position to insert:"));
             var arr = new Array(size);
-            for(var i = 0 ; i < size ; i++)
+            for(var index = 0 ; index < size ; index++)
             {
-                arr[i] = Number(prompt("Enter the array value"));
+                arr[index] = Number(prompt("Enter the array value"));
             }
             //Insert element into position without deleting any arraydata
             arr.splice(pos,0,value);

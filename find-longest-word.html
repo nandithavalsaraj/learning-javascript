@@ -9,10 +9,10 @@ A  simple program to find the longest word in the sentence.
                 var wordSet = str.split(' ');
                 var longestWord = "";
                 var maxLength = 0;
-                for(var i = 0 ; i < wordSet.length ; i++){
-                    if(maxLength < wordSet[i].length){
-                        maxLength = wordSet[i].length;
-                        longestWord = wordSet[i];
+                for(var index = 0 ; index < wordSet.length ; index++){
+                    if(maxLength < wordSet[index].length){
+                        maxLength = wordSet[index].length;
+                        longestWord = wordSet[index];
                     }
                 }
                 return longestWord;
