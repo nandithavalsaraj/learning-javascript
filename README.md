@@ -26,7 +26,7 @@ This is a repository containg JavaScript programs.
 
 [function-io-and-append-strings.html](https://nvjvn.github.io/learning-javascript/function-io-and-append-strings.html)- Read, process, and display username using functions.
 
-[get-name-initials.html](https://nvjvn.github.io/learning-javascript/get-name-initials.html)- A program to print a matrix of numbers given row and column si…	
+[get-name-initials.html](https://nvjvn.github.io/learning-javascript/get-name-initials.html)- A simple program to get the initials of the input name. Main aim is to familiarize with the inbuilt substring function.
 
 [guess-number.html](https://nvjvn.github.io/learning-javascript/guess-number.html)- A simple guess the number game. 
 
@@ -37,7 +37,9 @@ This is a repository containg JavaScript programs.
 [insert-element-atposition.html](https://nvjvn.github.io/learning-javascript/insert-element-atposition.html)- Array functions.
 
 [key-event.html](https://nvjvn.github.io/learning-javascript/key-event.html)- Working with onkeyUp and onblur.
-[matrix-of-numbers.html](https://nvjvn.github.io/learning-javascript/matrix-of-numbers.html)-	A program to print a matrix of numbers given row and column si…	
+
+[matrix-of-numbers.html](https://nvjvn.github.io/learning-javascript/matrix-of-numbers.html)-	A simple program to print a matrix of numbers given row and column size as input.
+
 [user-form.html](https://nvjvn.github.io/learning-javascript/user-form.html)- Program to create form for user input.
 
 [vowels-count.htm](https://nvjvn.github.io/learning-javascript/vowels-count.html)	A program to find factors of a given number.
