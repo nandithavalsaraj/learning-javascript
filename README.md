@@ -1,4 +1,4 @@
-This is a repository containg JavaScript programs. 
+
 
 [amount-to-coins.html](https://nvjvn.github.io/learning-javascript/amount-to-coins.html) - A program to convert total amount to set of coins.
 
@@ -43,3 +43,4 @@ This is a repository containg JavaScript programs.
 [user-form.html](https://nvjvn.github.io/learning-javascript/user-form.html)- Program to create form for user input.
 
 [vowels-count.htm](https://nvjvn.github.io/learning-javascript/vowels-count.html)	A program to find factors of a given number.
+
