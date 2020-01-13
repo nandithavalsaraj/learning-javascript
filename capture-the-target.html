@@ -1,0 +1,33 @@
+<!--
+	A simple capture the target game
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<img src = "1.jpeg" id = "image" width = "100" height = "100" style="position: absolute;  top: 10px; left: 10px;">
+	
+ 
+<script>
+	
+	const target = document.getElementById("image");
+	target.addEventListener('mouseover', function() {
+	console.log('U MISSED ME!');
+	//randomized coordinates to fit the browser window
+	const height = Math.floor(Math.random() * window.innerHeight);
+	const width = Math.floor(Math.random() * window.innerWidth);
+	//embedded expressions method
+	target.style.left = `${width}px`;
+	target.style.top = `${height}px`;
+});
+
+    target.addEventListener('click', function() {
+	target.innerText = 'YOU CAUGHT ME!';
+	document.body.style.backgroundColor = 'red';
+});
+</script>
+
+</body>
+</html>
