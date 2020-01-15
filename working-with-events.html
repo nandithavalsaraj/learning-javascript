@@ -1,0 +1,55 @@
+<!--
+Working with event listener and mouse events
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <table>
+                
+                <tr>
+                    <td><input type="button" value="Click me :)" id="btn1"  onclick="displayFunction(id)">
+                        <input type="button" value="Remove Event" id="btn2" onclick="removeFunction()"></td>
+                </tr>
+            </table>
+            <p id="res"></p>
+    </body>
+    <script>
+        	//addEvent
+        	if(btn1.addEventListener){
+        		btn1.addEventListener("mouseover",changeColor);
+                btn1.addEventListener("mouseout",changeColorOut);}
+        	else{
+        		btn1.attachEvent("mouseover",changeColor);
+                btn1.attachEvent("mouseout",changeColorOut);
+        	}
+            //removeEvent
+            function removeFunction()
+            {
+                if(btn1.removeEventListener){
+                  btn1.removeEventListener("mouseover",changeColor);
+                  btn1.removeEventListener("mouseout",changeColorOut);
+                    }
+                else{
+                     btn1.detachEvent("mouseover",changeColor);
+                     btn1.detachEvent("mouseout",changeColorOut);
+                }
+            }
+
+        	//common functions
+            function displayFunction(id)
+            {
+                
+                document.getElementById(id).style.color = "blue"
+            }
+            function changeColor()
+            {   this.style.backgroundColor = "red";
+                this.style.color = "yellow";
+            }
+            function changeColorOut()
+            {   this.style.backgroundColor = "yellow";
+                this.style.color = "red";
+            }
+        </script>
+</html>

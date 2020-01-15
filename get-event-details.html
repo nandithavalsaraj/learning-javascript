@@ -1,0 +1,37 @@
+<!--
+Working with event details
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <table>
+                 <tr>
+                    <td><input type="button" value="Get Event :)" id="btn" onclick="displayEvent(event)"></td></tr>
+            </table>
+            <p id="res"></p>
+    </body>
+    <script>
+        	
+        	//Obtaining event information
+        	function displayEvent(event){
+                var target;
+                if (event.srcElement){
+                    target = event.srcElement;
+                }
+                else{
+                    target = event.target;
+                }
+        		var eventDetails = "Event =" + event.type +"<br> X value = " + event.clientX + "<br> Y value = " + event.clientY + "<br> Target type =" + target.type + "<br> Target Tag Name = " + target.tagName;
+        		document.getElementById("res").innerHTML = eventDetails; 
+        	}
+        	//common functions
+            function displayFunction(id)
+            {
+                
+                document.getElementById(id).style.color = "blue"
+            }
+            
+        </script>
+</html>
