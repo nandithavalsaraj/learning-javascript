@@ -1,0 +1,24 @@
+<!--
+	Opening new window popup using the input url 
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body >Enter URL
+     <input type="text" name="url" id="url"><br>
+     <input type="button" name="open" value="Open" onclick="openWindow()"/>
+     <input type="button" name="close" value="Close" onclick="closeWindow()"/>
+ </body>
+ <script type = "text/javascript">
+ 	var popup;
+ 	function openWindow(){
+
+ 		popup = window.open(document.getElementById("url").value,'My Window','height=200px,width=400px, top=300px, left=450px')
+ 	}
+ 	function closeWindow(){
+ 		popup.close();
+ 	}
+ </script>
+     
+</html>
