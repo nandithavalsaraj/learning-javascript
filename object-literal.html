@@ -1,0 +1,37 @@
+<!--
+Object literals
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="res"></p>
+<script type="text/javascript">
+	var Employee = {
+		id : 101,
+		name : "Ram",
+		salary : 5000,
+		getDetails : function(){
+			this.id = Number(prompt("Enter employee ID"));
+			this.name = prompt("Enter employee Name");
+			this.salary = Number(prompt("Enter employee Salary"));
+
+		},
+		displayDetails :function(){
+			this.getDetails();
+			document.getElementById("res").innerHTML = "Number is " + this.id + "<br>" + "Name is " + this.name + "<br>" + "Salary is " + this.salary + "<br>" ;
+
+		},
+		annualSalary: function(){
+			document.getElementById("res").innerHTML += "Annual Salary of " + this.name + " is " + ( this.salary * 12);
+		}
+	}
+	var e1 = Employee;
+	e1.displayDetails();
+	e1.annualSalary();
+
+</script>
+</body>
+</html>
