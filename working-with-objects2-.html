@@ -1,0 +1,77 @@
+<!--
+Working with muliple objects and files-->
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="dotnet.js"></script>
+	<script type="text/javascript" src="java.js"></script>
+</head>
+<body>
+	<table style="border: 3px solid grey" >
+		<tr>
+			<td>Name </td>
+			<td>
+			<input type="text" id="cname">
+		</tr>
+		<tr>
+			<td>Contact Number </td>
+			<td><input type="text" id="cid" ></td>
+		</tr>
+		<tr><td>Select Course </td>
+			<td><input type="radio" name="namespace" id="dotnet" value="dotnet"> Dotnet
+  			<input type="radio" name="namespace" id="java" value="java"> Java</td>
+		</tr>
+		<tr><td>Details</td>
+			<td><input type="radio" name="func" id="courseinfo" value="Course Details"> Course Details
+  			<input type="radio" name="func" id="feesinfo" value="java"> Fees Details</td>
+		</tr>
+		<tr>
+			<td><input type="button" value="submit" onclick="check()">
+			<input type="button" value="cancel" onclick="resetForm()"></td>
+
+		</tr>
+		
+  		
+	</table>
+	<p id="res"></p>
+<script type="text/javascript" >
+		function check() {
+			var cid1 = new course.dotnet.coursedetails(101,"C01",45);
+			var cid2 = new course.java.coursedetails(102,"c02",60);
+			var fee1 = new course.dotnet.feedetails(101,2000);
+			var fee2 = new course.java.feedetails(102,3000);
+  			if(document.getElementById("dotnet").checked){
+  				if(document.getElementById("courseinfo").checked){
+  					cid1.getCourseDetails();
+  				}
+  				else{
+  					fee1.getFeeDetails();
+  				}
+  			}
+  			else{
+  				if(document.getElementById("courseinfo").checked){
+  					cid2.getCourseDetails();
+  				}
+  				else{
+  					fee2.getFeeDetails();
+  				}
+  			}
+			
+		}
+		function resetForm() {
+    // clearing inputs
+    	var inputs = document.getElementsByTagName('input');
+    	for (var i = 0; i<inputs.length; i++) {
+        	switch (inputs[i].type) {
+           	 // case 'hidden':
+            case 'text':
+                inputs[i].value = '';
+                break;
+            case 'radio':
+            case 'checkbox':
+                inputs[i].checked = false;   
+        }
+    }}
+</script>
+</body>
+</html>
