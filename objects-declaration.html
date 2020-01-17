@@ -1,0 +1,31 @@
+<!--
+Working with objects - method of declaring an object and using 'this' method.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="result"></p>
+<script type="text/javascript">
+	function Employee(id,name,s){
+		this.id = id;
+		this.name = name;
+		this.salary = s;
+		this.displayDetails = function(){
+			document.getElementById("result").innerHTML = "Number is " + this.id + "<br>" + "Name is " + this.name + "<br>" + "Salary is " + this.salary + "<br>" ;
+
+		}
+		this.annualSalary = function(){
+			document.getElementById("result").innerHTML += "Annual Salary of " + this.name + " is " + ( this.salary * 12);
+		}
+	}
+	var e1 = new Employee(101,'Ram',5000);
+	e1.displayDetails();
+	e1.annualSalary();
+
+</script>
+</body>
+</html>
