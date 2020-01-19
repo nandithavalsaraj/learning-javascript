@@ -1,0 +1,29 @@
+<!--
+working with promises
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating Promise</title>
+</head>
+<body>
+
+</body>
+<script>
+	const cointoss = new Promise((resolve, reject) => {
+		const randValue = Math.random();
+		if(randValue < 0.5){
+			resolve();
+		}
+		else{
+			reject();
+		}
+	});
+	cointoss.then(() => {
+		console.log("heads");
+	});
+	cointoss.catch(() => {
+		console.log("tail");
+	});
+</script>
+</html>
