@@ -1,0 +1,33 @@
+<!--
+Programs having promise return types-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Returning promise</title>
+</head>
+<body>
+
+</body>
+<script >
+	const cointoss = () => {
+	   return new Promise((resolve,reject) => {
+		setTimeout(() => {
+		const randValue = Math.random();
+		if(randValue < 0.5){
+			resolve();
+		}
+		else{
+			reject();
+		}
+	    },5000);
+	});
+	};
+
+	cointoss().then(() => {
+		console.log("heads");
+	});
+	cointoss().catch(() => {
+		console.log("tail");
+	});
+</script>
+</html>
