@@ -1,0 +1,20 @@
+<!--
+working with prototypes. Replacing existing prototype function in the Array prototype
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Working with prototypes</title>
+</head>
+<body>
+
+</body>
+<script>
+	const arr = [1, 2, 3, 4, 5, 6];
+	Array.prototype.pop = () => {
+		console.log("pop function no longer exist" );
+	}
+	arr.pop();
+</script>
+</html>
