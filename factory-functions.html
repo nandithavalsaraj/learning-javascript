@@ -1,0 +1,39 @@
+<!--
+Working with factory method. 
+Using this method we can add multiple functions into a single object so that we can make use of the functions without passing arguments each time to every single function. 
+
+color declarations
+	  rgb colors .Eg rgb(244,54,23)
+	  hexadeciamal Eg #76FF32
+	  hsl(number between 0-360, % ,%)
+	  rgba(r value, g value, b value ,<opacity>)
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Working with color using factory functions</title>
+</head>
+<body>
+
+</body>
+<script>
+	function factoryColor(r, g, b){
+		const color = {};
+		color.r = r;
+		color.g = g;
+		color.b = b;
+		color.rgb = function () {
+			return 'rgb(${b}, ${g}, ${b})';
+		}
+		color.hex = function(){
+			return ('#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1));
+		}
+		return color;
+
+	}
+const firstcolor = factoryColor(35, 225, 150);
+console.log(firstcolor.hex());
+console.log(firstcolor.rgb());
+	
+</script>
+</html>
