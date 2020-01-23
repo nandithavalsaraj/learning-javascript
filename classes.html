@@ -1,0 +1,33 @@
+<!--
+Working with classes
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Working with classes</title>
+</head>
+<body>
+
+</body>
+<script>
+	class Color{
+	constructor(r, g, b, name){
+		this.r = r;
+		this.g = g;
+		this.b = b;
+		this.name = name ;
+	}
+	getname(){
+		console.log(this.name);
+	}
+	getrgb(){
+		const {r, g, b} = this;
+		console.log(`rgb(${r}, ${g}, ${b})`);
+	}
+}
+	const c1 = new Color(124,122,23,'shade');	
+	c1.getname();
+	c1.getrgb();
+
+</script>
+</html>
