@@ -1,31 +1,33 @@
-<!---
-Using classes modifying the factory function method (factory-function.html)
+<!--
+Working with classes
 -->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Working with color using Classes</title>
+	<title>Working with classes</title>
 </head>
 <body>
 
 </body>
 <script>
-	function Color(r, g, b) {
-	this.r = r;
-	this.g = g;
-	this.b = b;
+	class Color{
+	constructor(r, g, b, name){
+		this.r = r;
+		this.g = g;
+		this.b = b;
+		this.name = name ;
+	}
+	getname(){
+		console.log(this.name);
+	}
+	getrgb(){
+		const {r, g, b} = this;
+		console.log(`rgb(${r}, ${g}, ${b})`);
+	}
 }
-	Color.prototype.rgb = function() {
-		const { r, g, b } = this;
-		return 'rgb(${b}, ${g}, ${b})';
-	};
-	Color.prototype.hex = function(){
-		const { r, g, b } = this;
-		return ('#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1));
-	};
- 	const firstcolor = new Color(35, 225, 150);
-	console.log(firstcolor.hex());
-	console.log(firstcolor.rgb());
-	
+	const c1 = new Color(124,122,23,'shade');	
+	c1.getname();
+	c1.getrgb();
+
 </script>
 </html>
