@@ -1,0 +1,39 @@
+<!--
+Working with class relationships - extending from parent class
+If we need to use constructor in subclass we need to use super-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script>
+	class shape{
+		constructor(name){
+			this.name = name;
+		}
+		getName(){
+			console.log(this.name);
+		}
+	}
+	class circle extends shape{
+		constructor(name,radius){
+			super(name);
+			this.radius = radius;
+		}
+	}
+	class rectangle extends shape{
+		constructor(name, length, breadth){
+			super(name);
+			this.length = length;
+			this.breadth = breadth;
+		}
+	}
+	const object1 = new rectangle(3,4);
+	object1.getName();
+	const object2 = new circle(3,4);
+	object2.getName();
+</script>
+</html>
