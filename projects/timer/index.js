@@ -3,6 +3,7 @@ class Timer{
 		this.durationInput = durationInput;
 		this.startButton =startButton;
 		this.pauseButton = pauseButton;
+		this.timeLeft = 30;
 		//event listeners
 		this.startButton.addEventListener('click', this.start);
 		this.pauseButton.addEventListener('click', this.pause);
@@ -11,7 +12,6 @@ class Timer{
 		this.tick();
 		//function tick is called every 1 second.
 		this.interval = setInterval(this.tick, 1000);
-		console.log(this.interval);
 	}
 
 	pause = () => {
@@ -19,7 +19,8 @@ class Timer{
 	}
 
 	tick = () => {
-		console.log("tick");
+		this.timeRemaining = parseFloat(this.durationInput.value);
+		this.durationInput.value = this.timeRemaining - 1;
 	}
 };
 const durationInput = document.querySelector('#duration');
