@@ -3,7 +3,6 @@ class Timer{
 		this.durationInput = durationInput;
 		this.startButton =startButton;
 		this.pauseButton = pauseButton;
-		this.timeLeft = 30;
 		//event listeners
 		this.startButton.addEventListener('click', this.start);
 		this.pauseButton.addEventListener('click', this.pause);
@@ -19,9 +18,18 @@ class Timer{
 	}
 
 	tick = () => {
-		this.timeRemaining = parseFloat(this.durationInput.value);
-		this.durationInput.value = this.timeRemaining - 1;
+		this.timeRemaining = this.timeRemaining - 1;
 	}
+
+	//getter and setter for time remaining which can be callede as a variable using this.<function name> due to usage of get and set keyword
+	//hiding setting and getting value of time remaining
+	get timeRemaining(){
+           return parseFloat(this.durationInput.value);
+	}
+	set timeRemaining(time){
+		this.durationInput.value = time;
+	}
+	
 };
 const durationInput = document.querySelector('#duration');
 const startButton = document.querySelector('#start');
