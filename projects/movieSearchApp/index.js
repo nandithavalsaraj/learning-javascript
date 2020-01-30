@@ -43,21 +43,9 @@ createAutoComplete({
  		onMovieSelect(movie, onMovieSelect(movie, document.querySelector('#right-summary'), 'right'));
  	}
 });
-<<<<<<< HEAD
 let leftMovie;
 let rightMovie;
 const onMovieSelect = async (movie, summaryElement, side) => {
-=======
-
-const onMovieSelect = async movie => {
->>>>>>> 6fb73eb599a32c8eead56c37cf3ec8b4c2829ee4
-    const response = await axios.get('http://www.omdbapi.com/', {
-	params : {
-		apikey : '2508c96f',
-		i : movie.imdbID
-		}
-	});
-<<<<<<< HEAD
 	summaryElement.innerHTML = movieTemplate(response.data);
 	if(side === 'left'){
 		leftMovie = response.data;
@@ -110,10 +98,9 @@ const movieTemplate = movieDetail => {
 			count = count + value;
 		}
 	}, 0);
-=======
 
-};const movieTemplate = movieDetail => {
->>>>>>> 6fb73eb599a32c8eead56c37cf3ec8b4c2829ee4
+};
+  const movieTemplate = movieDetail => {
 	return `<article class="media">
 				<figure class="media-left">
 					<p class="image">
@@ -128,6 +115,7 @@ const movieTemplate = movieDetail => {
 					</div>
 				</div>
 			</article>
+
 			<article data-value=${dollars} class="notification is-primary" >
 				<p class="title">${movieDetail.Awards}</p>
 				<p class="subtitle">Awards</p>
