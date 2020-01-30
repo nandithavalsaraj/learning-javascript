@@ -4,6 +4,7 @@ const autoCompleteConfig = ({
  		const imgSrc = movie.Poster === 'N/A' ? '' : movie.Poster;
  		return `
  		        <img src="${imgSrc}" />
+
 				${movie.Title} (${movie.Year})
 				`;
  	},
@@ -27,6 +28,7 @@ const autoCompleteConfig = ({
    }
  });
 
+
 createAutoComplete({
   ...autoCompleteConfig,
   root: document.querySelector('#left-autocomplete')
@@ -35,6 +37,7 @@ createAutoComplete({
   ...autoCompleteConfig,
   root: document.querySelector('#right-autocomplete')
 });
+
 const onMovieSelect = async movie => {
     const response = await axios.get('http://www.omdbapi.com/', {
 	params : {
@@ -42,7 +45,7 @@ const onMovieSelect = async movie => {
 		i : movie.imdbID
 		}
 	});
-	document.querySelector('#summary').innerHTML = movieTemplate(response.data);
+
 };const movieTemplate = movieDetail => {
 	return `<article class="media">
 				<figure class="media-left">
@@ -79,4 +82,5 @@ const onMovieSelect = async movie => {
 				<p class="subtitle">IMDB Votes</p>
 			</article>
 					`;
+
 };

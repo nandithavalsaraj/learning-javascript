@@ -1,3 +1,4 @@
+
 const createAutoComplete = ({
   root,
   renderOption,
@@ -14,6 +15,7 @@ const createAutoComplete = ({
       </div>
     </div>
   `;
+
 	const input = root.querySelector('input');
 	const dropdown = root.querySelector('.dropdown');
 	const resultsWrapper = root.querySelector('.results');
@@ -24,7 +26,9 @@ const createAutoComplete = ({
 			dropdown.classList.remove('is-active');
 			return;
 		}
+
 		resultsWrapper.innerHTML = '';
+
 		dropdown.classList.add('is-active');
 		for(let item of items){
 			const option = document.createElement('a');
