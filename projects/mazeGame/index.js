@@ -37,3 +37,10 @@ const verticals =  Array(cells)
 const horizondal =  Array(cells - 1)
 	.fill(null)
 	.map(() => Array(cells).fill(false));
+
+// Algorithm to traverse
+
+// select a random cell
+const startRow = Math.floor(Math.random() * cells);
+const startColumn = Math.floor(Math.random() * cells);
+console.log(startColumn, startRow);
