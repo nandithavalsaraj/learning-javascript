@@ -1,6 +1,7 @@
 const { Engine, Render, Runner, World, Bodies} = Matter;
 
 const cells = 3;
+
 const width = 600;
 const height = 600;
 
@@ -18,7 +19,9 @@ const render = Render.create({
 Render.run(render);
 Runner.run(Runner.create(), engine);
 
+
 //Walls creation 
+
 const walls = [
 	Bodies.rectangle(width / 2, 0, width, 40, { isStatic : true }),
 	Bodies.rectangle(width / 2, height, width, 40, { isStatic : true }),
@@ -28,6 +31,7 @@ const walls = [
 World.add(world, walls);
 
 //Maze generation
+
 const grid = Array(cells)
 	.fill(null)
 	.map(() => Array(cells).fill(false));
@@ -38,9 +42,10 @@ const horizondal =  Array(cells - 1)
 	.fill(null)
 	.map(() => Array(cells).fill(false));
 
-// Algorithm to traverse
+
 
 // select a random cell
 const startRow = Math.floor(Math.random() * cells);
 const startColumn = Math.floor(Math.random() * cells);
 console.log(startColumn, startRow);
+
