@@ -37,12 +37,5 @@ for(let i =0; i < 50 ; i++){
 			Bodies.circle(Math.random()*width, Math.random()*height, 35)
 			);
 	}
-<<<<<<< HEAD
+
 }
-=======
-}
-	
-
-
-
->>>>>>> 7b2a76331ee0986d5013c67246b4c2df86481d86
