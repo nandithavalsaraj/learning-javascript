@@ -110,7 +110,9 @@ horizondals.forEach((row, rowIndex) => {
 			rowIndex * unitLength + unitLength,
 			unitLength,
 			10,
-			{isStatic : true,
+			{
+			  isStatic : true,
+			  label :"wall",
 			  render :{
 			  	fillStyle :"green"
 			  }}
@@ -128,6 +130,7 @@ verticals.forEach((row, rowIndex) => {
 			10,
 			unitLength,
 			{isStatic : true,
+			  label :"wall",
 			  render :{
 			  	fillStyle :"green"
 			  }}
@@ -185,8 +188,16 @@ Events.on(engine, 'collisionStart', event => {
 	event.pairs.forEach(collision =>{
 		const labels = ["ball", "goal"];
 		if(labels.includes(collision.bodyA.label) && labels.includes(collision.bodyB.label)){
-			console.log("User Won!!!!!")
+			console.log("User Won!!!!!");
+			console.log(collision);
+			world.gravity.y = 1;
+			world.bodies.forEach(body => {
+			if(body.label === 'wall'){
+				Body.setStatic(body, false);
+			}
+		});
 		}
-		console.log(collision);
-	})
+		
+
+	});
 })
