@@ -13,7 +13,7 @@ const render = Render.create({
 	element : document.body,
 	engine: engine,
 	options: {
-		wireframes : true,
+		wireframes : false,
 		width,
 		height
 	}
@@ -110,7 +110,10 @@ horizondals.forEach((row, rowIndex) => {
 			rowIndex * unitLength + unitLength,
 			unitLength,
 			10,
-			{isStatic : true}
+			{isStatic : true,
+			  render :{
+			  	fillStyle :"green"
+			  }}
 			);
 		World.add(world, wall);
 	});
@@ -124,7 +127,10 @@ verticals.forEach((row, rowIndex) => {
 			rowIndex * unitLength + unitLength/2,
 			10,
 			unitLength,
-			{isStatic : true}
+			{isStatic : true,
+			  render :{
+			  	fillStyle :"green"
+			  }}
 			);
 		World.add(world, wall);
 	});
@@ -136,7 +142,11 @@ const goal = Bodies.rectangle(
 	height - unitLength / 2,
 	unitLength * 0.7,
 	unitLength * 0.7,
-	{isStatic : true}
+	{isStatic : true,
+	 label : "goal",
+	  render :{
+	  	fillStyle :"yellow"
+	  }}
 	);
 World.add(world, goal);
 
@@ -145,28 +155,38 @@ const ball = Bodies.circle(
 	unitLength / 2,
 	unitLength / 2,
 	unitLength / 4,
+	{
+		label :"ball",
+		render :{
+			fillStyle :"red"
+		}
+	}
 	);
 World.add(world, ball);
+
+//Adding keypress events
 document.addEventListener("keydown", event =>{
 	const  { x, y} = ball.velocity;
 	if(event.keyCode === 87){
 		Body.setVelocity(ball, {x, y : y - 5});
-		console.log("Ball up");
 	}
 	if(event.keyCode === 68){
 		Body.setVelocity(ball, {x: x + 5, y} )
-		console.log("right");
 	}
 	if(event.keyCode === 83){
 		Body.setVelocity(ball, {x, y : y + 5})
-		console.log("down");
 	}
 	if(event.keyCode === 65){
 		Body.setVelocity(ball, {x : x - 5, y})
-		console.log("left");
 	}
 });
 //Win Condition
 Events.on(engine, 'collisionStart', event => {
-	console.log("Win");
+	event.pairs.forEach(collision =>{
+		const labels = ["ball", "goal"];
+		if(labels.includes(collision.bodyA.label) && labels.includes(collision.bodyB.label)){
+			console.log("User Won!!!!!")
+		}
+		console.log(collision);
+	})
 })
