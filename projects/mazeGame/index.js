@@ -9,6 +9,7 @@ const unitLengthY = height / cellsVertical ;
 
 
 const engine = Engine.create();
+
 //disabling the gravity of the world
 engine.world.gravity.y = 0;
 const { world } = engine;
@@ -21,8 +22,10 @@ const render = Render.create({
 		height
 	}
 });
+
 Render.run(render);
 Runner.run(Runner.create(), engine);
+
 
 //Walls creation 
 const walls = [
@@ -62,6 +65,7 @@ const startRow = Math.floor(Math.random() * cellsVertical);
 const startColumn = Math.floor(Math.random() * cellsHorizondal);
 
 const stepThroughCell = (row, column) => {
+
 	//if visited the cell then return 
 	if(grid[row][column]){
 		return ;
@@ -187,6 +191,7 @@ document.addEventListener("keydown", event =>{
 		Body.setVelocity(ball, {x : x - 5, y})
 	}
 });
+
 //Win Condition
 Events.on(engine, 'collisionStart', event => {
 	event.pairs.forEach(collision =>{
@@ -203,4 +208,4 @@ Events.on(engine, 'collisionStart', event => {
 		
 
 	});
-})
+});
