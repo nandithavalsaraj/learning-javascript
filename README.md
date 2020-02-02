@@ -1,1 +1,1 @@
-This repository is for learning JavaScript and JavaScript projects.
+This repository is for learning JavaScript and working on JavaScript projects.
