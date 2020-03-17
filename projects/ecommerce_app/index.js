@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+//all route handlers will be able to access the bodyparser middleware
+app.use(bodyParser.urlencoded({ extended: true}));
+
 //route handler
 app.get('/', (req, res) => {
 	res.send(`
@@ -17,10 +20,12 @@ app.get('/', (req, res) => {
 		`);
 });
 
-app.post('/', bodyParser.urlencoded({ extended: true}), (req, res) =>{ 
+app.post('/', (req, res) =>{ 
 	console.log(req.body);
 	res.send("Account Created");
 });
+
+
 
 //tell app to start listening to the incomming network traffic
 app.listen(3000, () => {
