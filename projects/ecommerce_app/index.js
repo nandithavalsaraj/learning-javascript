@@ -1,6 +1,9 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const usersRepo = require('./repositories/users');
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //route handler
 app.get('/', (req, res) => {
@@ -16,33 +19,21 @@ app.get('/', (req, res) => {
 		`);
 });
 
-//middleware function
-//get access to the data inputted from the browser and then parse 
-//next is the call back function
-const bodyParser = (req, res, next) => {
-	if(req.method === 'POST'){
-		req.on('data', data => {	
-		  const parsed = data.toString('utf8').split('&');
-		  const formData = {};
-		  for (let pair of parsed){
-			  const [key, value] =pair.split('=');
-			  formData[key] = value;
-		  }
-      req.body = formData;
-		  next();
-	  });
-	}
-	else{ 
-		//as its not a POST request call callbback function
-		next();
-	}
-};
+app.post('/', async (req, res) => {
+  const { email, password, passwordConfirmation } = req.body;
 
+  const existingUser = await usersRepo.getOneBy({ email });
+  if (existingUser) {
+    return res.send('Email in use');
+  }
 
-app.post('/', bodyParser, (req, res) =>{ 
-	console.log(req.body);
-	res.send("Account Created");
+  if (password !== passwordConfirmation) {
+    return res.send('Passwords must match');
+  }
+  await usersRepo.create({email, password});
+  res.send('Account created!!!');
 });
+
 
 //tell app to start listening to the incomming network traffic
 app.listen(3000, () => {
