@@ -1,80 +1,37 @@
 const fs = require('fs');
 const crypto = require('crypto');
+const util = require('util');
+const Repository = require('./repository');
 
-class UsersRepository{
-	constructor(filename){
-		if(!filename){
-			throw new Error('Creating a repository requires a filename');
-		}
+const scrypt = util.promisify(crypto.scrypt);
 
-		this.filename = filename;
-		try{
-			//check if a file exists
-			fs.accessSync(this.filename);
-		} catch(err){
-			//create a file in case 
-			fs.writeFileSync(this.filename, '[]');
-		}	
-	}
-	async getAll(){
-		//open the file this.filename
-		return JSON.parse(
-			await fs.promises.readFile(this.filename, {
-			 encoding :'utf8'
-		})
-	  );
-	}
+class UsersRepository extends Repository {
+  async comparePasswords(saved, supplied) {
+    // Saved -> password saved in our database. 'hashed.salt'
+    // Supplied -> password given to us by a user trying sign in
+    const [hashed, salt] = saved.split('.');
+    const hashedSuppliedBuf = await scrypt(supplied, salt, 64);
 
-	async create(attrs) {
-		attrs.id = this.randomId();
-		//data saved as records
-		const records = await this.getAll();
-		records.push(attrs);
-		await this.writeAll(records);
-	}
+    return hashed === hashedSuppliedBuf.toString('hex');
+  }
 
-	async writeAll(records){
-		await fs.promises.writeFile(this.filename, JSON.stringify(records, null, 2));
-	}
+  async create(attrs) {
+    attrs.id = this.randomId();
 
-	randomId(){
-		return crypto.randomBytes(4).toString('hex');
-	}
+    const salt = crypto.randomBytes(8).toString('hex');
+    const buf = await scrypt(attrs.password, salt, 64);
 
-	async getOne(id){
-		const records = await this.getAll();
-		return records.find(record => record.id ===id);
-	}
+    const records = await this.getAll();
+    const record = {
+      ...attrs,
+      password: `${buf.toString('hex')}.${salt}`
+    };
+    records.push(record);
 
-	async delete(id){
-		const records = await this.getAll();
-		const filteredRecords = records.filter(record => record.id!== id);
-		await this.writeAll(filteredRecords);
-	}
+    await this.writeAll(records);
 
-	async update(id, attrs){
-		const records = await this.getAll();
-		const record = records.find(record => record.id === id);
-		if(!record){
-			throw new Error(`Record with id ${id} not found`);
-		}
-		Object.assign(record, attrs);
-		await this.writeAll(records);
- 	}
- 	async getOneBy(filters){
- 		const records = await this.getAll();
- 		for(let record of records){
- 			let found = true;
- 			for(let key in filters){
- 				if(record[key] !== filters[key]){
- 					found = false;
- 				} 
- 			}
- 			if(found){
- 				return record;
- 			}
- 		}
- 	}
+    return record;
+  }
 }
 
 module.exports = new UsersRepository('users.json');
